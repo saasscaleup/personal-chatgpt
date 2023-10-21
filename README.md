@@ -34,6 +34,12 @@ will help you learn how to develop a Telegram bot with Laravel. Here is the vide
 
 Test reading `data/data.txt` file.
 
+```
+> python chatgpt.py "what plans I have for 25 to October?"
+Your plan for October 25th is to upload a new YouTube video.
+```
+
+
 
 ## Support 🙏😃
   
@@ -46,7 +52,3 @@ Thanks for your support :)
 
 <a href="https://www.buymeacoffee.com/scaleupsaas"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=scaleupsaas&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
 
-```
-> python chatgpt.py "what plans I have for 25 to October?"
-Your plan for October 25th is to upload a new YouTube video.
-```
