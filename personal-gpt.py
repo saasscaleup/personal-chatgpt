@@ -16,11 +16,18 @@ query = None
 if len(sys.argv) > 1:
   query = sys.argv[1]
 
-#loader = TextLoader("data/data.txt") # Use this line if you only need data.txt
-loader_dic = DirectoryLoader("data/")
-#loader_web = WebBaseLoader(["https://aws.amazon.com/getting-started/hands-on/setting-up-a-redis-cluster-with-amazon-elasticache/?ref=gsrchandson"])
+#loader_file = TextLoader("data/data.txt") # Use this line if you only need data.txt
+loader_dic = DirectoryLoader("data/") # Use this line if you want to load all data under data/ dir
 
-index = VectorstoreIndexCreator().from_loaders([loader_dic])
+#more_data = [
+#  "https://aws.amazon.com/blogs/devops/using-generative-ai-amazon-bedrock-and-amazon-codeguru-to-improve-code-quality-and-security/",
+#  "https://aws.amazon.com/blogs/compute/building-a-serverless-document-chat-with-aws-lambda-and-amazon-bedrock/"
+#]
+#loader_web = WebBaseLoader(more_data) # Use this line if you want to load data from web
+
+#index = VectorstoreIndexCreator().from_loaders([loader_dic,loader_web])
+
+index = VectorstoreIndexCreator().from_loaders([loader_file])
 
 chain = ConversationalRetrievalChain.from_llm(
   llm=ChatOpenAI(model="gpt-3.5-turbo"),
