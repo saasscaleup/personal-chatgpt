@@ -1,7 +1,7 @@
 # personal-chatgpt
 Personal ChatGPT Allow you to enhance the Power of ChatGPT with your PERSONAL DATA using LangChain
 
-Here's the [YouTube Video](https://youtu.be/).
+Here's the [YouTube Video](https://youtu.be/ROsb_73EpzE).
 
 <a href="https://www.buymeacoffee.com/scaleupsaas"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=scaleupsaas&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
