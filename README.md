@@ -8,20 +8,30 @@ Here's the [YouTube Video](https://youtu.be/ROsb_73EpzE).
 
 ## Installation
 
+Follow next steps in order to obtain the power of Personal-ChatGPT
+
+### Step 1 - Git clone
+
 ```
 git clone https://github.com/saasscaleup/personal-chatgpt.git
 ```
+
+### Step 2 - Install required packages.
 
 Install [Langchain](https://github.com/hwchase17/langchain) and other required packages.
 ```
 pip install langchain openai chromadb tiktoken unstructured requests duckduckgo-search google-search-results
 ```
 
+### Step 3 - Update OpenAI API Key
+
 
 Modify `env.py.copy` to use your own [OpenAI API key](https://platform.openai.com/account/api-keys), and rename it to `env.py`.
 
+### Step 4 - Place your own personal DATA
 
 Place your own data into `data/data.txt` or `data/`.
+
 
 ## Example usage
 
