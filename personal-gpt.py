@@ -19,15 +19,15 @@ if len(sys.argv) > 1:
 #loader_file = TextLoader("data/data.txt") # Use this line if you only need data.txt
 loader_dic = DirectoryLoader("data/") # Use this line if you want to load all data under data/ dir
 
-#more_data = [
-#  "https://aws.amazon.com/blogs/devops/using-generative-ai-amazon-bedrock-and-amazon-codeguru-to-improve-code-quality-and-security/",
-#  "https://aws.amazon.com/blogs/compute/building-a-serverless-document-chat-with-aws-lambda-and-amazon-bedrock/"
-#]
-#loader_web = WebBaseLoader(more_data) # Use this line if you want to load data from web
+more_data = [
+  "https://aws.amazon.com/blogs/devops/using-generative-ai-amazon-bedrock-and-amazon-codeguru-to-improve-code-quality-and-security/",
+  "https://aws.amazon.com/blogs/compute/building-a-serverless-document-chat-with-aws-lambda-and-amazon-bedrock/"
+]
+loader_web = WebBaseLoader(more_data) # Use this line if you want to load data from web
 
-#index = VectorstoreIndexCreator().from_loaders([loader_dic,loader_web])
+index = VectorstoreIndexCreator().from_loaders([loader_dic,loader_web])
 
-index = VectorstoreIndexCreator().from_loaders([loader_file])
+#index = VectorstoreIndexCreator().from_loaders([loader_dic])
 
 chain = ConversationalRetrievalChain.from_llm(
   llm=ChatOpenAI(model="gpt-3.5-turbo"),

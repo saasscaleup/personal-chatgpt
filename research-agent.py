@@ -1,28 +1,39 @@
 import os
 import sys
 import requests
+import env
 from bs4 import BeautifulSoup
+
 from langchain.tools import Tool, DuckDuckGoSearchResults
+from langchain.utilities import SerpAPIWrapper
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
 from langchain.agents import initialize_agent, AgentType
 
 
-import env
-
 os.environ["OPENAI_API_KEY"] = env.OPENAI_APIKEY
+os.environ["SERPAPI_API_KEY"] = env.SERPAPI_APIKEY
 
 # Setting Up the DuckDuckGo Search Tool
 ddg_search = DuckDuckGoSearchResults()
 
-# pip install langchain openai requests duckduckgo-search
+search = SerpAPIWrapper()
 
+serpapi_tool = Tool(
+    name="Search",
+    func=search.run,
+    description="useful for when you need to answer questions about current events",
+)
 
 # Defining Headers for Web Requests
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:90.0) Gecko/20100101 Firefox/90.0'
+    'User-Agent': 'Mozilla/5.0 (Linux; Android 10; Pixel 4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Mobile Safari/537.36'
 }
+
+"""
+In this section, we're setting two functions to fetch and grab any url content 
+"""
 
 # Parsing HTML Content
 def parse_html(content) -> str:
@@ -34,6 +45,7 @@ def parse_html(content) -> str:
 def fetch_web_page(url: str) -> str:
     response = requests.get(url, headers=HEADERS)
     return parse_html(response.content)
+
 
 """
 In this section, we're generating a new tool utilizing the Tool.from_function approach. 
@@ -56,7 +68,7 @@ llm = ChatOpenAI(model="gpt-3.5-turbo-16k")
 This section sets up a summarizer using the ChatOpenAI model from LangChain. 
 We define a prompt template for summarization, create a chain using the model and the prompt, 
 and then define a tool for summarization. 
-We use ChatGPT 3, 5 16k context as most web pages will exceed the 4k context of ChatGPT 3.5.
+We use ChatGPT 3.5 16k context as most web pages will exceed the 4k context of ChatGPT 3.5.
 """
 
 llm_chain = LLMChain(
@@ -77,7 +89,7 @@ It's worth noting the versatility in utilizing the LLM from the summarization to
 
 """
 # Initializing the Agent
-tools = [ddg_search, web_fetch_tool, summarize_tool]
+tools = [serpapi_tool, web_fetch_tool, summarize_tool]
 
 agent = initialize_agent(
     tools=tools,
