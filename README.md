@@ -1,7 +1,7 @@
 # personal-chatgpt
 Personal ChatGPT Allow you to enhance the Power of ChatGPT with your PERSONAL DATA using LangChain
 
-Here's the [YouTube Video](https://youtu.be/).
+Here's the [YouTube Video](https://youtu.be/ROsb_73EpzE).
 
 <a href="https://www.buymeacoffee.com/scaleupsaas"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=scaleupsaas&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
@@ -14,7 +14,7 @@ git clone https://github.com/saasscaleup/personal-chatgpt.git
 
 Install [Langchain](https://github.com/hwchase17/langchain) and other required packages.
 ```
-pip install langchain openai chromadb tiktoken unstructured
+pip install langchain openai chromadb tiktoken unstructured requests duckduckgo-search
 ```
 
 
@@ -24,6 +24,8 @@ Modify `env.py.copy` to use your own [OpenAI API key](https://platform.openai.co
 Place your own data into `data/data.txt` or `data/`.
 
 ## Example usage
+
+### Example of personal-gpt
 Test reading `data/My Youtube tutorials.pdf` file.
 
 ```
@@ -39,6 +41,18 @@ Test reading `data/data.txt` file.
 Your plan for October 25th is to upload a new YouTube video.
 ```
 
+### Example of research-agent
+
+Test Researching "Research about the top 5 stock to invest now." 
+
+```
+> python research-agent.py "Research about the top 5 stock to invest now."
+
+According to Bank of America's list of best stocks to buy now, the top 5 stocks to invest in are
+Boeing (BA), CSX (CSX), Five Below (FIVE), Kraft Heinz (KHC), and Occidental Petroleum (OXY). 
+These stocks have been selected based on their potential for growth and positive catalysts. 
+However, it is important to conduct further research and analysis before making any investment decisions.
+```
 
 
 ## Support 🙏😃
