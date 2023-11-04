@@ -20,7 +20,7 @@ git clone https://github.com/saasscaleup/personal-chatgpt.git
 
 Install [Langchain](https://github.com/hwchase17/langchain) and other required packages.
 ```
-pip install langchain openai chromadb tiktoken unstructured requests duckduckgo-search google-search-results
+pip3 install langchain openai chromadb tiktoken unstructured requests duckduckgo-search google-search-results
 ```
 
 ### Step 3 - Update OpenAI API Key
