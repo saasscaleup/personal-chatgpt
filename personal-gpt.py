@@ -9,7 +9,7 @@ from langchain.indexes import VectorstoreIndexCreator
 
 import env
 
-os.environ["OPENAI_API_KEY"] = env.APIKEY
+os.environ["OPENAI_API_KEY"] = env.OPENAI_APIKEY
 
 query = None
 
