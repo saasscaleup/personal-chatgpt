@@ -24,8 +24,9 @@ user_input = st.session_state.user_input
 # Display the user input
 st.write("You entered:", user_input)
 
-result = god_chatgpt.agent_executor({"input": user_input})
-print(result)
+if user_input:
+    result = god_chatgpt.agent_executor({"input": user_input})
+    print(result)
 
-# Additional interaction with the input (example: converting input to uppercase)
-st.write("🔥 GOD-ChatGPT Answer: ", result['output'])
+    # Additional interaction with the input 
+    st.write("🔥 GOD-ChatGPT Answer: ", result['output'])
