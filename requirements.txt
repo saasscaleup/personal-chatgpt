@@ -98,7 +98,7 @@ pyarrow==14.0.1
 pycocotools==2.0.7
 pycodestyle==2.10.0
 pycparser==2.21
-pydantic==2.4.1
+pydantic==1.9
 pydantic_core==2.10.1
 pydeck==0.8.1b0
 Pygments==2.16.1
