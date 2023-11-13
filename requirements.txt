@@ -31,7 +31,6 @@ docutils==0.19
 duckduckgo-search==3.9.3
 effdet==0.4.1
 emoji==2.8.0
-fastapi==0.103.1
 filelock==3.12.4
 filetype==1.2.0
 flatbuffers==23.5.26
