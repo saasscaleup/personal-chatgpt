@@ -19,9 +19,8 @@ certifi==2023.5.7
 cffi==1.15.1
 chardet==5.2.0
 charset-normalizer==3.1.0
-sqlite==3.35.0
 chroma-hnswlib==0.7.3
-chromadb==0.4.13
+chromadb==0.3.29
 click==8.1.7
 coloredlogs==15.0.1
 contourpy==1.1.1
