@@ -1,3 +1,12 @@
+import sys
+
+try:
+    import pysqlite3
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except:
+    print("Can't import pysqlite3")
+
+
 # used to save information
 from langchain.vectorstores import Chroma
 
