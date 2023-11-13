@@ -3,6 +3,7 @@ from GodChatGPT import GodChatGPT
 
 god_chatgpt = GodChatGPT(st.secrets["openai_apikey"],st.secrets["serpapi_apikey"])
 
+
 # Set page title
 st.title("🔥 Wellcome to GOD-ChatGPT 🔥")
 
