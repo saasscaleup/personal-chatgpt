@@ -1,4 +1,4 @@
-# used to save information
+# used to load text
 from langchain.vectorstores import Chroma
 
 # used to create the retriever
@@ -36,7 +36,7 @@ os.environ["SERPAPI_API_KEY"] = env.SERPAPI_APIKEY
 
 """
 In this section, we're setting up our personal data Database 
-by using OpenAIEmbeddings, ChromaDB and Langchain Tool
+by using OpenAIEmbeddings, ChromaDB and Langcahin Tool
 """
 
 # Use this line if you want to load all data under data/ dir
@@ -131,7 +131,7 @@ agent_executor = AgentExecutor(
 )
 
 # Run first encounter with our agent
-# result = agent_executor({"input": "Hey, Are you ready for work?"})
+result = agent_executor({"input": "Hey, Are you ready for work?"})
 
 prompt = None
 
