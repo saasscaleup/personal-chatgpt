@@ -1,20 +1,30 @@
 import streamlit as st
 from GodChatGPT import GodChatGPT
 
-god_chatgpt = GodChatGPT(st.secrets["openai_apikey"],st.secrets["serpapi_apikey"])
+@st.cache_resource  # 👈 Add the caching decorator
+def load_god_chatgpt():
+    god_chatgpt = GodChatGPT(st.secrets["openai_apikey"],st.secrets["serpapi_apikey"])
+    return god_chatgpt
 
+if 'user_input' not in st.session_state:
+    st.session_state.user_input = ''
+
+def submit():
+    st.session_state.user_input = st.session_state.widget
+    st.session_state.widget = ''
+
+god_chatgpt = load_god_chatgpt();
 
 # Set page title
 st.title("🔥 Wellcome to GOD-ChatGPT 🔥")
 
-# Add an input field
-user_input = st.text_input("Play with me:")
+st.text_input("Play with me:",key='widget', on_change=submit)
 
+user_input = st.session_state.user_input
 # Display the user input
 st.write("You entered:", user_input)
 
 result = god_chatgpt.agent_executor({"input": user_input})
-
 print(result)
 
 # Additional interaction with the input (example: converting input to uppercase)

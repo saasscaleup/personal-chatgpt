@@ -1,5 +1,6 @@
 import sys
 
+# streamlit special fix
 try:
     import pysqlite3
     sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
@@ -125,7 +126,10 @@ class GodChatGPT():
             content=(
                 "Do your best to answer the questions. "
                 "Feel free to use any tools available to look up "
-                "relevant information and personal data"
+                "relevant information and personal data. "
+                "Use Personal Data tool when asked personal questions. "
+                "Use search tool when asking questions about current event or when you don't have answer. "
+                "Use Your memory when needed."
             )
         )
 
@@ -143,7 +147,7 @@ class GodChatGPT():
         agent_executor = AgentExecutor(
             agent=self.agent, 
             tools=self.tools, 
-            memory=self.memory, 
+            memory=ConversationBufferMemory(memory_key=self.memory_key, return_messages=True), 
             verbose=True, 
             handle_parsing_errors=True
         )
