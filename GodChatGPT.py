@@ -33,7 +33,7 @@ class GodChatGPT():
     def __init__(self):
 
         self.openai_apikey  = env.OPENAI_APIKEY
-        self.serpapi_apikey  = env.OPENAI_APIKEY
+        self.serpapi_apikey  = env.SERPAPI_APIKEY
         self.setEnvirmentKeys()
 
         self.llm            = ChatOpenAI(temperature=0, openai_api_key=self.openai_apikey)

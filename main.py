@@ -8,6 +8,7 @@ origins = [
 ]
 
 app = FastAPI()
+god_chatgpt = GodChatGPT()
 
 app.add_middleware(
     CORSMiddleware,
@@ -23,7 +24,6 @@ def root():
 
 @app.get("/god-chatgpt")
 def run_god_chatgpt(query: str):
-    god_chatgpt = GodChatGPT()
     result = god_chatgpt.agent_executor({"input": query})
     print(result)
     return {"result":result['output']}
