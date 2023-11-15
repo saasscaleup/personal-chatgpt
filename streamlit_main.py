@@ -23,8 +23,7 @@ user_input = st.session_state.user_input
 
 st.write("Your entred: ", user_input)
 
-result = god_chatgpt.agent_executor({"input":user_input})
-
-print(result)
-
-st.write("🔥 GOD-ChatGPT Answer: ", result["output"])
+if user_input:
+    result = god_chatgpt.agent_executor({"input":user_input})
+    print(result)
+    st.write("🔥 GOD-ChatGPT Answer: ", result["output"])
