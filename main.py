@@ -19,7 +19,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"hello":"word"}
+    return {"Hello":"ScaleUp SaaS"}
 
 @app.get("/god-chatgpt")
 def run_god_chatgpt(query: str):
