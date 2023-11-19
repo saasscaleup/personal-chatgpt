@@ -1,7 +1,7 @@
 # personal-chatgpt -> Streamlit Branch
 Personal ChatGPT (Streamlit Branch) Allow you to run on your browser the Power of ChatGPT with your PERSONAL DATA, Intenrnet Access and Memory using LangChain and Streamlit
 
-Here's the [YouTube Video](https://youtu.be/ROsb_73EpzE).
+Here's the [YouTube Video](https://youtu.be/us1l14STMX4).
 
 <a href="https://www.buymeacoffee.com/scaleupsaas"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=scaleupsaas&button_colour=BD5FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
